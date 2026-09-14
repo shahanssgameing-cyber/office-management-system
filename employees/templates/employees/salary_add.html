@@ -1,0 +1,193 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Salary</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <h2>Office Management</h2>
+
+        <a href="{% url 'dashboard' %}">
+            🏠 Dashboard
+        </a>
+
+        <a href="{% url 'employee_list' %}">
+            👥 Employees
+        </a>
+
+        <a href="{% url 'employee_add' %}">
+            ➕ Add Employee
+        </a>
+
+        <a href="{% url 'attendance_list' %}">
+            📅 Attendance
+        </a>
+
+        <a href="{% url 'salary_list' %}">
+            💰 Salary
+        </a>
+
+        <a href="{% url 'user_logout' %}">
+            🚪 Logout
+        </a>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <div class="form-header">
+
+            <h1>Add Salary</h1>
+
+            <p>
+                Add salary information for an employee
+            </p>
+
+        </div>
+
+
+        <div class="form-card">
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+                <div class="form-group">
+
+                    <label>Employee</label>
+
+                    <select name="employee" required>
+
+                        <option value="">
+                            Select Employee
+                        </option>
+
+                        {% for employee in employees %}
+
+                            <option value="{{ employee.id }}">
+                                {{ employee.name }}
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Month</label>
+
+                    <input
+                        type="text"
+                        name="month"
+                        placeholder="September 2026"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Basic Salary</label>
+
+                    <input
+                        type="number"
+                        name="basic_salary"
+                        id="basic_salary"
+                        step="0.01"
+                        required
+                        oninput="calculateNetSalary()"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Bonus</label>
+
+                    <input
+                        type="number"
+                        name="bonus"
+                        id="bonus"
+                        step="0.01"
+                        value="0"
+                        oninput="calculateNetSalary()"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Deduction</label>
+                    <input
+                        type="number"
+                        name="deduction"
+                        id="deduction"
+                        step="0.01"
+                        value="0"
+                        oninput="calculateNetSalary()"
+                        >
+
+                </div>
+
+                <div class="form-group">
+                    <label>Net Salary</label>
+                    <h2 id="net_salary">0.00</h2>
+                </div>
+
+
+                <button
+                    class="save-button"
+                    type="submit"
+                >
+                    Save Salary
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script>
+    function calculateNetSalary() {
+
+        let basic = parseFloat(
+            document.getElementById("basic_salary").value
+        ) || 0;
+
+        let bonus = parseFloat(
+            document.getElementById("bonus").value
+        ) || 0;
+
+        let deduction = parseFloat(
+            document.getElementById("deduction").value
+        ) || 0;
+
+        let net = basic + bonus - deduction;
+
+        document.getElementById("net_salary").innerText = net.toFixed(2);
+    }
+</script>
+
+</body>
+
+</html>

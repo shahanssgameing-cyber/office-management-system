@@ -1,0 +1,338 @@
+/* Layout */
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+    margin: -40px;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    width: 230px;
+    background: #222;
+    padding: 30px 20px;
+    box-sizing: border-box;
+}
+
+.sidebar h2 {
+    color: white;
+    margin-bottom: 35px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+.sidebar a:hover {
+    background: #444;
+}
+
+
+/* Main Content */
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.main-content h1 {
+    margin-top: 0;
+}
+
+/* Layout */
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+    margin: -40px;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    width: 230px;
+    background: #222;
+    padding: 30px 20px;
+    box-sizing: border-box;
+}
+
+.sidebar h2 {
+    color: white;
+    margin-bottom: 35px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+.sidebar a:hover {
+    background: #444;
+}
+
+
+/* Main Content */
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.main-content h1 {
+    margin-top: 0;
+}
+
+/* =========================
+   Employee List
+   ========================= */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.page-header p {
+    color: #777;
+    margin-top: 5px;
+}
+
+.add-button {
+    background: #222;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 7px;
+    text-decoration: none;
+}
+
+.add-button:hover {
+    background: #444;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.search-form input {
+    width: 300px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+.search-form button {
+    background: #222;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background: #444;
+}
+
+.table-container {
+    background: white;
+    border-radius: 10px;
+    overflow-x: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container th {
+    background: #222;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+.table-container td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.table-container tr:hover {
+    background: #f8f8f8;
+}
+
+.edit-button {
+    color: #0066cc;
+    text-decoration: none;
+    margin-right: 12px;
+    font-weight: bold;
+}
+
+.delete-button {
+    color: #d00000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   Add Employee Form
+   ========================= */
+
+.form-header {
+    margin-bottom: 25px;
+}
+
+.form-header h1 {
+    margin-bottom: 5px;
+}
+
+.form-header p {
+    color: #777;
+}
+
+.form-card {
+    background: white;
+    max-width: 650px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #555;
+}
+
+.save-button {
+    background: #222;
+    color: white;
+    padding: 13px 22px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.save-button:hover {
+    background: #444;
+}
+/* =========================
+   Dashboard
+   ========================= */
+
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    width: 250px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #555;
+}
+
+.card p {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+    color: #222;
+}
+/* =========================
+   Dashboard Cards
+   ========================= */
+
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    width: 250px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #555;
+}
+
+.card p {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+    color: #222;
+}
+
+/* Attendance Form */
+
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 15px;
+    background: white;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #555;
+}

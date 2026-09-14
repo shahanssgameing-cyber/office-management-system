@@ -1,0 +1,126 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Salary</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <h2>Office Management</h2>
+
+        <a href="{% url 'dashboard' %}">
+            🏠 Dashboard
+        </a>
+
+        <a href="{% url 'employee_list' %}">
+            👥 Employees
+        </a>
+
+        <a href="{% url 'employee_add' %}">
+            ➕ Add Employee
+        </a>
+
+        <a href="{% url 'attendance_list' %}">
+            📅 Attendance
+        </a>
+
+        <a href="{% url 'salary_list' %}">
+            💰 Salary
+        </a>
+
+        <a href="{% url 'user_logout' %}">
+            🚪 Logout
+        </a>
+
+    </aside>
+
+    <main class="main-content">
+
+        <div class="page-header">
+
+            <div class="page-header">
+
+        <div>
+            <h1>Salary</h1>
+            <p>Manage employee salaries</p>
+        </div>
+
+            <a class="add-button" href="{% url 'salary_add' %}">
+               + Add Salary
+            </a>
+
+       </div>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Employee</th>
+                        <th>Month</th>
+                        <th>Basic Salary</th>
+                        <th>Bonus</th>
+                        <th>Deduction</th>
+                        <th>Net Salary</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                {% for salary in salaries %}
+
+                    <tr>
+                        <td>{{ salary.id }}</td>
+
+                        <td>
+                            <strong>{{ salary.employee.name }}</strong>
+                        </td>
+
+                        <td>{{ salary.month }}</td>
+
+                        <td>{{ salary.basic_salary }}</td>
+
+                        <td>{{ salary.bonus }}</td>
+
+                        <td>{{ salary.deduction }}</td>
+
+                        <td>
+                            <strong>
+                                {{ salary.net_salary }}
+                            </strong>
+                        </td>
+                    </tr>
+
+                {% empty %}
+
+                    <tr>
+                        <td colspan="7">
+                            No salary records found.
+                        </td>
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>

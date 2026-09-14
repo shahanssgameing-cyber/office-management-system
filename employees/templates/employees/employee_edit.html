@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <h1>Edit Employee</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <label>Name</label>
+        <br>
+        <input type="text" name="name" value="{{ employee.name }}" required>
+
+        <br><br>
+
+        <label>Email</label>
+        <br>
+        <input type="email" name="email" value="{{ employee.email }}" required>
+
+        <br><br>
+
+        <label>Phone</label>
+        <br>
+        <input type="text" name="phone" value="{{ employee.phone }}" required>
+
+        <br><br>
+
+        <label>Department</label>
+        <br>
+        <input type="text" name="department" value="{{ employee.department }}" required>
+
+        <br><br>
+
+        <label>Position</label>
+        <br>
+        <input type="text" name="position" value="{{ employee.position }}" required>
+
+        <br><br>
+
+        <label>Salary</label>
+        <br>
+        <input type="number" name="salary" value="{{ employee.salary }}" required>
+
+        <br><br>
+
+        <label>Joining Date</label>
+        <br>
+        <input type="date" name="joining_date" value="{{ employee.joining_date|date:'Y-m-d' }}" required>
+
+        <br><br>
+
+        <button type="submit">Save Changes</button>
+
+    </form>
+
+    <br>
+
+    <a href="/employees/">Back to Employees</a>
+
+</body>
+
+</html>

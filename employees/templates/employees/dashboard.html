@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <h2>Office Management</h2>
+
+            <a href="{% url 'dashboard' %}">
+                🏠 Dashboard
+            </a>
+
+            <a href="{% url 'employee_list' %}">
+                👥 Employees
+            </a>
+
+            <a href="{% url 'employee_add' %}">
+                ➕ Add Employee
+            </a>
+
+            <a href="{% url 'user_logout' %}">
+                🚪 Logout
+            </a>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <h1>Dashboard</h1>
+
+            <div class="dashboard">
+
+                <div class="card">
+                    <h2>Total Employees</h2>
+                    <p>{{ total_employees }}</p>
+                </div>
+
+                <div class="card">
+                    <h2>Total Departments</h2>
+                    <p>{{ total_departments }}</p>
+                </div>
+
+                <div class="card">
+                    <h2>Total Salary</h2>
+                    <p>{{ total_salary }}</p>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
