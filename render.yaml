@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: office-management-system
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn office.wsgi:application"
+    
