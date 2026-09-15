@@ -13,16 +13,6 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 from pathlib import Path
 import os
 
-from django.contrib.auth import get_user_model
-
-User = get_user_model()
-
-if os.environ.get("ADMIN_USERNAME") and os.environ.get("ADMIN_PASSWORD"):
-    if not User.objects.filter(username=os.environ["ADMIN_USERNAME"]).exists():
-        User.objects.create_superuser(
-            username=os.environ["ADMIN_USERNAME"],
-            email=os.environ.get("ADMIN_EMAIL", ""),
-            password=os.environ["ADMIN_PASSWORD"],
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
